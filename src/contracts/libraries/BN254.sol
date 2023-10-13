@@ -19,7 +19,7 @@
 
 // The remainder of the code is written by LayrLabs Inc. and is under the BUSL-1.1 license
 
-pragma solidity =0.8.12;
+pragma solidity ^0.8.12;
 
 /**
  * @title Library for operations on the BN254 elliptic curve.
