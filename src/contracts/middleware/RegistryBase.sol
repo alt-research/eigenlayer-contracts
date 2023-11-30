@@ -512,10 +512,10 @@ abstract contract RegistryBase is VoteWeigherBase, IQuorumRegistry {
         internal virtual
     {
 
-        require(
-            slasher.contractCanSlashOperatorUntilBlock(operator, address(serviceManager)) == type(uint32).max,
-            "RegistryBase._addRegistrant: operator must be opted into slashing by the serviceManager"
-        );
+        // require(
+        //     slasher.contractCanSlashOperatorUntilBlock(operator, address(serviceManager)) == type(uint32).max,
+        //     "RegistryBase._addRegistrant: operator must be opted into slashing by the serviceManager"
+        // );
         // store the Operator's info in mapping
         registry[operator] = Operator({
             pubkeyHash: pubkeyHash,
@@ -554,7 +554,7 @@ abstract contract RegistryBase is VoteWeigherBase, IQuorumRegistry {
         _updateTotalOperatorsHistory();
 
         // record a stake update not bonding the operator at all (unbonded at 0), because they haven't served anything yet
-        serviceManager.recordFirstStakeUpdate(operator, 0);
+        // serviceManager.recordFirstStakeUpdate(operator, 0);
 
         emit StakeUpdate(
             operator,
